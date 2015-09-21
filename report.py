@@ -13,12 +13,16 @@ def allowed_file(filename):
 def login():
     # POST : 전송
     if request.method == 'POST':
-        file = request.files['file']
-        print file.filename
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print app.config['UPLOAD_FOLDER']
+        print request.form
+        name = request.form['name']
+        photo = request.files['file']
+        quality = request.form['quality']
+        cost = request.form['cost']
+        comment = request.form['comment']
+
+        if photo and allowed_file(photo.filename):
+            filename = secure_filename(photo.filename)
+            photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return ""
     elif request.method == 'GET':
         # GET : 입력폼 보이기
