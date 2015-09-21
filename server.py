@@ -1,11 +1,10 @@
 #-*- coding: utf-8 -*-
 
 from flask import *
-from settings import MODULES
+from settings import MODULES, UPLOAD_FOLDER
 
 app = Flask(__name__)
-
-app.secret_key = 'secretkey'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def index():
