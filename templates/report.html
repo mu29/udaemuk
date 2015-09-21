@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon">
+
+        <title>유니스트 대신 먹어봤습니다</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="/static/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>유니스트 대신 먹어봤습니다</h1>
+                <h5>제보하기</h5>
+            </div>
+            <div class="header-text">
+                <p>
+                    그대가 먹은 음식, 일단 올려주길 바란다.</br>
+                    배달, 방문, 학식, 편의점 자작 뭐든 좋다.</br>
+                    평가도 있으면 더 좋다.</br></br>
+                    걱정마라, 익명이다. 돼지라고 안놀린다.</br></br>
+                    나중에 모아서 평가좀 만들어 보려고 한다.</br>
+                    잘 부탁한다.
+                </p>
+            </div>
+            <div class = "header-img">
+                <img src="/static/img/banner.png" class="img-responsive" alt="Responsive image">
+            </div>
+
+            <form action="" method=post enctype=multipart/form-data>
+                <div class="form-group">
+                    <label for="name">음식 / 업체명</label>
+                    <p>
+                        먹은 음식의 주문/방문 업체명, 음식 명 등 음식에 대한 설명
+                        <span class="label label-primary">필수</span>
+                    </p>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="ex) dd">
+                </div>
+
+                <div class="form-group">
+                    <label >음식 사진</label>
+                    <p>찍은 사진이나 이미지가 있으면 첨부</p>
+                    <div class="btn btn-default btn-sm">
+                        <input type="file" name="file">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label >음식 퀄리티 평가</label>
+                    <p>
+                        음식의 퀄리티에 대한 주관적인 평가
+                        <span class="label label-primary">필수</span>
+                    </p>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="quality" value="1" autocomplete="off"> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="quality" value="2" autocomplete="off">2
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="quality" value="3" autocomplete="off">3
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="quality" value="4" autocomplete="off">4
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="quality" value="5" autocomplete="off">5
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label >음식 가성비 평가</label>
+                    <p>음식의 가성비에 대한 주관적인 평가</p>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="cost" value="1" autocomplete="off"> 1
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="cost" value="2" autocomplete="off">2
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="cost" value="3" autocomplete="off">3
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="cost" value="4" autocomplete="off">4
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="cost" value="5" autocomplete="off">5
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment">한줄 코멘트</label>
+                    <p>음식에 대한 짧은 코멘트</p>
+                    <input type="text" class="form-control" id="comment" name="comment" placeholder="ex) dd">
+                </div>
+
+                <div class="submit">
+                    <p>
+                        <input type="submit" class="btn btn-primary btn-lg" value="제보하기">
+                    </p>
+                    <p> 모든 내용은 완전히 익명이니까 걱정하지 마세요</p>
+                </div>
+
+      </form>
+
+      <footer class ="footer-edit">
+          <p class="pull-right">
+              <a href="https://www.facebook.com/unistdaemuk">페이스북 페이지로</a>
+          </p>
+          <p>유니스트 대신 먹어드립니다</p>
+      </footer>
+ </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
