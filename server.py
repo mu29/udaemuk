@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 
 from flask import *
-from load_modules import MODULE_NAMES
+from settings import MODULES
 
 app = Flask(__name__)
 
@@ -12,5 +12,5 @@ def index():
     return ""
 
 def init_server():
-    for module_name in MODULE_NAMES:
-        __import__(module_name)
+    for module in MODULES:
+        __import__(module)
