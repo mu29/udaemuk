@@ -22,5 +22,10 @@ class FacebookBot:
         graph = facebook.GraphAPI(page_access_token)
         return graph
 
-    def post(self, message, file):
-        api.put_wall_post(message)
+    def post(self, message, photo):
+        if photo is None:
+            self.api.put_wall_post(message)
+        else:
+            self.api.put_photo(open(photo), message)
+
+fbBot = FacebookBot()
