@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import os
 import facebook
+from server import app
 from settings import *
 
 class FacebookBot:
@@ -26,6 +28,7 @@ class FacebookBot:
         if photo is None:
             self.api.put_wall_post(message)
         else:
-            self.api.put_photo(open(photo), message)
+            path = os.path.join(app.config['UPLOAD_FOLDER'], photo)
+            self.api.put_photo(open(path), message)
 
 fbBot = FacebookBot()

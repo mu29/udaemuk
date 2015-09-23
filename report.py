@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import datetime
 from flask import *
 from werkzeug import secure_filename
 from server import app
@@ -12,8 +13,8 @@ def allowed_file(filename):
 
 @app.route('/report/', methods=['POST', 'GET'])
 def login():
-    # POST : 전송
     if request.method == 'POST':
+        # POST : 전송
         name = request.form['name']
         photo = request.files['file']
         quality = request.form['quality']
@@ -35,12 +36,12 @@ def login():
 
         filename = None
         if photo and allowed_file(photo.filename):
-            filename = secure_filename(photo.filename)
+            now = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_")
+            filename = secure_filename(now + photo.filename)
             photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         fbBot.post(message, filename)
-
-        return ""
+        return render_template('report.html', submit = True)
     elif request.method == 'GET':
         # GET : 입력폼 보이기
-        return render_template('report.html')
+        return render_template('report.html', submit = False)
